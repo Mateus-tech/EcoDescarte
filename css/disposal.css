@@ -303,4 +303,19 @@
     flex-direction: column;
     gap: 10px;
   }
+  @media (max-width: 600px) {
+    #pontos-de-coleta .grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-left: 0;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  
+    .ecoponto {
+      width: 100%;
+      padding: 1rem;
+      margin: 0 auto;
+    }
+  }
   
