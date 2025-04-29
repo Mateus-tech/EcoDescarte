@@ -5,29 +5,151 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Login - EcoTroca</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <link rel="icon" type="image/png" href="logo2.png">
+  <link rel="stylesheet" href="css/style.css">
   <style>
-    body { font-family: Arial, sans-serif; background: #f1f1f1; display: flex; justify-content: center; align-items: center; height: 100vh; }
-    .container { background: #fff; padding: 20px; border-radius: 8px; max-width: 400px; width: 100%; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    h1 { text-align: center; }
-    input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; }
-    button { width: 100%; padding: 10px; border: none; border-radius: 4px; background: #4CAF50; color: #fff; font-size: 16px; cursor: pointer; }
-    button:hover { background: #45a049; }
-    .message { color: red; text-align: center; margin-top: 10px; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e8f5e9, #f1f8e9);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .login-container {
+      max-width: 1000px;
+      margin: auto;
+      margin-top: 100px;
+      padding: 40px 30px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      margin-bottom: 60px;
+    }
+  
+    .login-container h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 28px;
+    }
+  
+    .login-container input {
+      margin-bottom: 20px;
+      padding: 12px;
+      font-size: 16px;
+    }
+  
+    .login-container button {
+      background-color: #4CAF50;
+      font-size: 18px;
+      padding: 12px;
+    }
+  
+    .login-container button:hover {
+      background-color: #45a049;
+    }
+  
+    .message {
+      color: red;
+      text-align: center;
+      margin-top: 10px;
+    }
+  
+    header {
+      background-color: #4CAF50;
+      padding: 10px 0;
+    }
+  
+    .navbar-brand {
+      color: white;
+      font-weight: bold;
+    }
+  
+    .navbar-nav .nav-link {
+      color: white !important;
+    }
+  
+    .navbar-nav .nav-link:hover {
+      text-decoration: underline;
+    }
   </style>
-</head>
-<body>
-  <div class="container">
+  
+  <!-- Logo e Cabeçalho mantidos -->
+  <header class="header">
+    <div class="container header-top">
+      <a href="index.html" class="logo">
+        <img src="logo2.png" alt="">
+        <span>Eco+Descarte</span>
+      </a>
+      <div class="search-bar">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" placeholder="Buscar itens, categorias...">
+      </div>
+      <nav class="user-nav" id="userNav">
+        <a href="#" class="nav-link"><i class="far fa-heart"></i><span>Favoritos</span></a>
+        <a href="#" class="nav-link"><i class="far fa-comment-dots"></i><span>Mensagens</span></a>
+        <div id="authArea" class="auth-buttons">
+          <a href="login.html" class="btn btn-login">Entrar</a>
+          <a href="signup.html" class="btn btn-signup">Cadastrar</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Formulário de Login -->
+  <div class="login-container">
     <h1>Login</h1>
-    <input type="email" id="loginEmail" placeholder="Digite seu e-mail">
-    <input type="password" id="loginPassword" placeholder="Digite sua senha">
-    <button id="loginBtn">Entrar</button>
+    <input type="email" id="loginEmail" class="form-control" placeholder="Digite seu e-mail">
+    <input type="password" id="loginPassword" class="form-control" placeholder="Digite sua senha">
+    <button id="loginBtn" class="btn btn-success w-100">Entrar</button>
     <div class="message" id="loginMessage"></div>
-    <p style="text-align:center; margin-top:15px;">
+    <p class="text-center mt-3">
       Não tem conta? <a href="signup.html">Cadastre-se</a>
     </p>
   </div>
+  
+    
+  </body>
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-section">
+        <a href="index.html" class="logo"><i class="fas fa-recycle logo-icon"></i><span>EcoTroca</span></a>
+        <p>Conectando pessoas para um consumo mais consciente.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Navegação</h3>
+        <a href="index.html">Início</a>
+        <a href="index.html?transactionType=sale">Comprar</a>
+        <a href="create-listing.html">Vender</a>
+        <a href="index.html?transactionType=trade">Trocar</a>
+        <a href="index.html?transactionType=donation">Doar</a>
+        <a href="recycling-centers.html">Descarte</a>
+      </div>
+      <div class="footer-section">
+        <h3>Ajuda</h3>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#">FAQ</a>
+        <a href="#">Segurança</a>
+        <a href="#">Contato</a>
+      </div>
+      <div class="footer-section newsletter">
+        <h3>Newsletter</h3>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Seu e-mail">
+          <button type="submit"><i class="fas fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 EcoTroca. Todos os direitos reservados.</span>
+    </div>
+  </footer>
 
-  <!-- Firebase SDK -->
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
     import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
@@ -52,35 +174,22 @@
 
       try {
         await signInWithEmailAndPassword(auth, email, password);
-        // Redireciona para a página principal após login bem-sucedido
         window.location.href = "index.html?success=1";
       } catch (error) {
         let errorMessage = "";
         switch(error.code) {
-          case 'auth/invalid-email':
-            errorMessage = 'E-mail inválido';
-            break;
-          case 'auth/user-disabled':
-            errorMessage = 'Usuário desativado';
-            break;
-          case 'auth/user-not-found':
-            errorMessage = 'Usuário não encontrado';
-            break;
-          case 'auth/wrong-password':
-            errorMessage = 'Senha incorreta';
-            break;
-          default:
-            errorMessage = 'Erro ao fazer login';
+          case 'auth/invalid-email': errorMessage = 'E-mail inválido'; break;
+          case 'auth/user-disabled': errorMessage = 'Usuário desativado'; break;
+          case 'auth/user-not-found': errorMessage = 'Usuário não encontrado'; break;
+          case 'auth/wrong-password': errorMessage = 'Senha incorreta'; break;
+          default: errorMessage = 'Erro ao fazer login';
         }
         messageEl.textContent = errorMessage;
       }
     });
 
-    // Opcional: se o usuário já estiver logado, redireciona
     onAuthStateChanged(auth, (user) => {
-      if (user) {
-        window.location.href = "index.html?success=1";
-      }
+      if (user) window.location.href = "index.html?success=1";
     });
   </script>
 </body>
