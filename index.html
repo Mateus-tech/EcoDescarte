@@ -3,229 +3,295 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EcoTroca - Venda, troque, doe ou descarte</title>
-  <link rel="stylesheet" href="style.css">
+  <title>EcoTroca - Venda, Troque, Doe ou Descarte</title>
+  <link rel="stylesheet" href="css/style.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    /* Ícone de coração com animação */
-    .heart-icon {
-      color: #e74c3c;
-      font-size: 1.5em;
-      animation: pulse 1s infinite;
-    }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.2); }
-      100% { transform: scale(1); }
-    }
-    /* Aviso de sucesso */
-    .alert-success {
-      background: #d4edda;
-      color: #155724;
-      border: 1px solid #c3e6cb;
-      padding: 10px;
-      text-align: center;
-      margin: 10px auto;
-      max-width: 600px;
-      border-radius: 4px;
-    }
-    /* Botão "Anunciar Produto" */
-    .btn-annunciar {
-      background: #4CAF50;
-      color: #fff;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 4px;
-      text-decoration: none;
-      margin-right: 10px;
-    }
-    /* Estilos para os cards de produto */
-    .item-card {
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      padding: 10px;
-      margin-bottom: 20px;
-      display: flex;
-      gap: 10px;
-    }
-    .item-card img {
-      width: 150px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 4px;
-    }
-    .item-info h3 {
-      margin: 0;
-    }
-    .item-info p {
-      margin: 5px 0;
-      font-size: 14px;
-      color: #555;
-    }
-    /* Estilo para as tabs (filtros) */
-    .tabs-list {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-    .tabs-list button {
-      padding: 8px 12px;
-      border: none;
-      background: #ddd;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-    .tabs-list button.active {
-      background: #4CAF50;
-      color: #fff;
-    }
-  </style>
 </head>
 <body>
   <!-- Header -->
-  <header>
-    <div class="container">
-      <div class="header-top">
-        <!-- Logo -->
-        <a href="index.html" class="logo">
-          <i class="fas fa-recycle logo-icon"></i>
-          <span>EcoTroca</span>
-        </a>
-        <!-- Search Bar -->
-        <div class="search-bar">
-          <i class="fas fa-search search-icon"></i>
-          <input type="text" placeholder="Buscar itens, categorias...">
-        </div>
-        <!-- User Navigation -->
-        <div class="user-nav" id="userNav">
-          <a href="#" class="nav-link">
-            <i class="far fa-heart heart-icon"></i>
-            <span>Favoritos</span>
-          </a>
-          <a href="#" class="nav-link">
-            <i class="far fa-comment-dots user-nav-icon"></i>
-            <span>Mensagens</span>
-          </a>
-          <div id="authArea">
-            <a href="login.html" class="nav-link">Entrar</a>
-            <a href="signup.html" class="nav-link">Cadastrar</a>
-          </div>
-        </div>
+  <header class="header">
+    <div class="container header-top">
+      <a href="index.html" class="logo">
+        <img src="logo2.png" alt="">
+        
+        <span>Eco+Descarte</span>
+      </a>
+      <div class="search-bar">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" placeholder="Buscar itens, categorias...">
       </div>
-      <!-- Category Navigation -->
-      <div class="category-nav">
-        <ul class="category-list">
-          <li><a href="index.html" data-category="all" class="active">Todos</a></li>
-          <li><a href="index.html?category=furniture" data-category="furniture">Móveis</a></li>
-          <li><a href="index.html?category=clothing" data-category="clothing">Roupas</a></li>
-          <li><a href="index.html?category=other" data-category="other">Outros</a></li>
-        </ul>
-      </div>
+      <nav class="user-nav" id="userNav">
+        <a href="#" class="nav-link"><i class="far fa-heart"></i><span>Favoritos</span></a>
+        <a href="#" class="nav-link"><i class="far fa-comment-dots"></i><span>Mensagens</span></a>
+        <div id="authArea" class="auth-buttons">
+          <a href="login.html" class="btn btn-login">Entrar</a>
+          <a href="signup.html" class="btn btn-signup">Cadastrar</a>
+        </div>
+        
+      </nav>
     </div>
   </header>
 
-  <!-- Aviso de sucesso -->
-  <div id="alertContainer"></div>
-
-  <!-- Main Content -->
-  <main>
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-content">
-          <div class="hero-text">
-            <h1>Dê uma nova vida aos seus itens</h1>
-            <p>Venda, troque, doe ou descarte de maneira responsável.</p>
-            <div class="hero-buttons" id="heroButtons">
-              <a href="create-listing.html" class="btn btn-primary btn-annunciar" id="btnAnunciar" style="display:none;">Anunciar Produto</a>
-              <a href="#" class="btn btn-secondary">Saiba mais</a>
-            </div>
-          </div>
-          <div class="hero-image">
-            <img src="https://img.freepik.com/fotos-premium/um-infografico-que-detalha-o-processo-e-os-beneficios-da-reciclagem-transformando-itens-antigos-em-novos-produtos-uteis_964851-145135.jpg?w=1380" alt="Reuse, recycle, repurpose">
-          </div>
+  <!-- Hero Section -->
+  <section class="hero" style="background: url('https://img.freepik.com/fotos-premium/infografico-beneficios-reciclagem_964851-145135.jpg') center/cover no-repeat; position: relative;">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>Dê uma nova vida aos seus itens</h1>
+        <p>Venda, troque, doe ou descarte de maneira responsável e sustentável.</p>
+        <div class="hero-buttons">
+          <a href="create-listing.html" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Anunciar Produto</a>
+          <a href="#como-funciona" class="btn btn-secondary"><i class="fas fa-info-circle"></i> Como Funciona</a>
         </div>
-      </div>
-    </section>
-    
-    <!-- Transaction Type Tabs -->
-    <section class="transaction-tabs">
-      <div class="container">
-        <div class="tabs-list">
-          <button data-type="sale" class="active">Venda</button>
-          <button data-type="trade">Troca</button>
-          <button data-type="donation">Doação</button>
-          <button data-type="disposal">Descarte responsável</button>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Items Container -->
-    <section class="container items-container">
-      <!-- Produtos serão carregados aqui -->
-    </section>
-  </main>
-
-  <!-- Footer (seu footer existente) -->
-  <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <a href="index.html" class="logo">
-            <i class="fas fa-recycle logo-icon"></i>
-            <span>EcoTroca</span>
-          </a>
-          <p>Conectando pessoas interessadas em vender, trocar, descartar ou doar.</p>
-          <div class="social-links">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-          </div>
-        </div>
-        <div class="footer-section">
-          <h3>Navegação</h3>
-          <div class="footer-links">
-            <a href="index.html">Início</a>
-            <a href="index.html?transactionType=sale">Comprar</a>
-            <a href="create-listing.html">Vender</a>
-            <a href="index.html?transactionType=trade">Trocar</a>
-            <a href="index.html?transactionType=donation">Doar</a>
-            <a href="recycling-centers.html">Pontos de Descarte</a>
-          </div>
-        </div>
-        <div class="footer-section">
-          <h3>Ajuda</h3>
-          <div class="footer-links">
-            <a href="#">Como funciona</a>
-            <a href="#">Perguntas frequentes</a>
-            <a href="#">Regras da comunidade</a>
-            <a href="#">Segurança</a>
-            <a href="#">Contato</a>
-          </div>
-        </div>
-        <div class="footer-section footer-newsletter">
-          <h3>Newsletter</h3>
-          <p>Receba novidades sobre sustentabilidade.</p>
-          <form class="newsletter-form">
-            <input type="email" placeholder="Seu e-mail" class="newsletter-input">
-            <button type="submit" class="newsletter-button">
-              <i class="fas fa-paper-plane"></i>
-            </button>
-          </form>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <div class="footer-bottom-links">
-          <a href="#">Termos de uso</a>
-          <a href="#">Política de privacidade</a>
-          <a href="#">Cookies</a>
-        </div>
-        <p class="copyright">&copy; 2025 EcoTroca. Todos os direitos reservados.</p>
       </div>
     </div>
+  </section>
+
+    <!-- Disposal Info Section -->
+    <section class="disposal-info">
+      <div class="container disposal-content">
+        <div class="disposal-image">
+          <img src="https://images.pexels.com/photos/256381/pexels-photo-256381.jpeg" alt="Ponto de Descarte" />
+        </div>
+        <div class="disposal-text">
+          <i class="fas fa-map-marker-alt disposal-icon"></i>
+          <h2>Descarte Responsável</h2>
+          <p>Saiba onde e como descartar corretamente seus itens para reduzir o impacto ambiental e promover a reciclagem.</p>
+          <a href="descarte.html" class="btn btn-disposal"><i class="fas fa-location-arrow"></i> Ver Locais de Descarte</a>
+        </div>
+      </div>
+    </section>
+  
+  <!-- Features Section -->
+  <section id="como-funciona" class="features">
+    <div class="container">
+      <h2>Como Funciona</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <i class="fas fa-upload fa-2x"></i>
+          <h3>1. Anuncie</h3>
+          <p>Cadastre seus itens em poucos passos: título, fotos, descrição e escolha o tipo de transação.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-handshake fa-2x"></i>
+          <h3>2. Conecte-se</h3>
+          <p>Negocie diretamente com interessados: venda, troque ou doe. Tudo de forma segura pela nossa plataforma.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-recycle fa-2x"></i>
+          <h3>3. Recicle ou Descarte</h3>
+          <p>Para itens sem utilidade, veja nossos pontos de descarte responsável e contribua com o meio ambiente.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-leaf fa-2x"></i>
+          <h3>4. Ganhe Impacto</h3>
+          <p>Acumule pontos de sustentabilidade e acompanhe seu impacto na comunidade.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="container stats-grid">
+      <div><i class="fas fa-users fa-2x"></i><strong>+</strong><span>Usuários Ativos</span></div>
+      <div><i class="fas fa-box fa-2x"></i><strong>+</strong><span>Itens Anunciados</span></div>
+      <div><i class="fas fa-hand-holding-heart fa-2x"></i><strong>+</strong><span>Doações Realizadas</span></div>
+      <div><i class="fas fa-leaf fa-2x"></i><strong>-</strong><span>Resíduos </span></div>
+    </div>
+  </section>
+  <section class="products">
+  <!-- Transaction Type Tabs -->
+  <section class="transaction-tabs">
+    <div class="container">
+      <div class="tabs-list">
+        <button data-type="sale" class="active"><i class="fas fa-tag"></i> Venda</button>
+        <button data-type="trade"><i class="fas fa-exchange-alt"></i> Troca</button>
+        <button data-type="donation"><i class="fas fa-gift"></i> Doação</button>
+        
+      </div>
+
+      <!-- Categoria por tipo -->
+      <div class="category-tabs">
+        <div id="sale-categories" class="categories active">
+          <a href="index.html?category=furniture">Móveis</a>
+          <a href="index.html?category=clothing">Roupas</a>
+          <a href="index.html?category=electronics">Eletrônicos</a>
+          <a href="index.html?category=other">Outros</a>
+        </div>
+       
+      </div>
+    </div>
+  </section>
+
+  <!-- Items Container -->
+  <section class="container items-container">
+    <!-- Produtos serão carregados aqui via JS -->
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <div class="container">
+      <h2>O que dizem nossos usuários</h2>
+      <div class="testimonial-cards">
+        <div class="testimonial-card">
+          <p>"Consegui trocar meu móvel antigo por um perfeito para meu escritório! Plataforma super intuitiva."</p>
+          <h4>Mariana Silva</h4>
+        </div>
+        <div class="testimonial-card">
+          <p>"Doar roupas que não uso ficou tão fácil. Adorei contribuir com quem precisa e ainda ganhar pontos."</p>
+          <h4>Lucas Pereira</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-section">
+        <a href="index.html" class="logo"><i class="fas fa-recycle logo-icon"></i><span>EcoTroca</span></a>
+        <p>Conectando pessoas para um consumo mais consciente.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Navegação</h3>
+        <a href="index.html">Início</a>
+        <a href="index.html?transactionType=sale">Comprar</a>
+        <a href="create-listing.html">Vender</a>
+        <a href="index.html?transactionType=trade">Trocar</a>
+        <a href="index.html?transactionType=donation">Doar</a>
+        <a href="recycling-centers.html">Descarte</a>
+      </div>
+      <div class="footer-section">
+        <h3>Ajuda</h3>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#">FAQ</a>
+        <a href="#">Segurança</a>
+        <a href="#">Contato</a>
+      </div>
+      <div class="footer-section newsletter">
+        <h3>Newsletter</h3>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Seu e-mail">
+          <button type="submit"><i class="fas fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 EcoTroca. Todos os direitos reservados.</span>
+    </div>
   </footer>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+
+  <!-- Estilo extra para Hero -->
+  <style>
+    .hero {
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      position: relative;
+      text-align: center;
+    }
+    .hero-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    .category-tabs {
+      margin-top: 20px;
+    }
+    .categories {
+      display: none;
+      margin-top: 10px;
+    }
+    .categories.active {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .categories a {
+      background: #eee;
+      padding: 8px 15px;
+      border-radius: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    /* Estilos para os botões de "Entrar" e "Cadastrar" */
+.auth-buttons {
+  display: flex;
+  gap: 15px; /* Espaçamento entre os botões */
+  align-items: center;
+}
+
+.btn-login, .btn-signup {
+  padding: 10px 20px; /* Ajuste o tamanho dos botões */
+  border-radius: 25px; /* Bordas arredondadas */
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  transition: background 0.3s ease, color 0.3s ease;
+  border: 2px solid transparent; /* Garantir borda transparente inicialmente */
+}
+
+/* Estilos para o botão Entrar */
+.btn-login {
+  background-color: #ffffff; /* Fundo branco */
+  color: #333333; /* Texto escuro */
+  border-color: #4CAF50; /* Borda verde */
+}
+
+.btn-login:hover {
+  background-color: #4CAF50; /* Fundo verde */
+  color: white; /* Texto branco */
+}
+
+/* Estilos para o botão Cadastrar */
+.btn-signup {
+  background-color: #4CAF50; /* Fundo verde */
+  color: white; /* Texto branco */
+  border: 2px solid #4CAF50; /* Borda verde */
+}
+
+.btn-signup:hover {
+  background-color: #45a049; /* Fundo verde mais escuro */
+  border-color: #45a049; /* Borda mais escura */
+}
+
+  </style>
+
+  <!-- Script para trocar categorias -->
+  <script>
+    const tabs = document.querySelectorAll('.tabs-list button');
+    const categories = document.querySelectorAll('.categories');
+
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        categories.forEach(c => c.classList.remove('active'));
+        categories[index]?.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
+
 
   <!-- Script Unificado -->
   <script type="module">

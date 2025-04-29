@@ -1,0 +1,306 @@
+:root {
+    --verde-1: #1b5e20; --verde-2: #2e7d32; --verde-3: #43a047;
+    --verde-4: #66bb6a; --verde-5: #81c784;
+    --branco: #ffffff; --sombra: 0 4px 20px rgba(0,0,0,0.1);
+    --raio: 12px; --trans: 0.4s ease;
+  }
+  
+  /* Hero */
+  .hero { position: relative; height: 60vh; display: flex; align-items: center; justify-content: center; color: #fff; text-align: center; }
+  .hero-overlay { position:absolute; inset:0; background:rgba(0,0,0,0.4); }
+  .hero-content { position:relative; z-index:2; }
+  .hero-buttons .btn { margin:0 0.5rem;display:grid; }
+  
+  /* Intro & Benefits */
+  .intro, .benefits { padding:2rem 0; animation:fadeInUp 1s both; }
+  .benefit-list { list-style:none; padding:0; }
+  .benefit-list li { display:flex; align-items:center; margin:0.8rem 0; }
+  .benefit-list li i { color:var(--verde-3); margin-right:0.5rem; }
+  
+  /* Steps */
+  .steps-container { display:flex; gap:1rem; flex-wrap:wrap; }
+  .step { background:var(--branco); padding:1rem; border-radius:var(--raio); box-shadow:var(--sombra);
+         flex:1; min-width:180px; text-align:center; opacity:0; transform:translateY(30px);
+         animation:fadeInUp 0.6s forwards; }
+  .step:nth-child(1){animation-delay:0.2s;} .step:nth-child(2){animation-delay:0.4s;}
+  .step:nth-child(3){animation-delay:0.6s;}
+  .step-number { width:36px; height:36px; background:var(--verde-3); color:#fff; border-radius:50%;
+                 display:flex; align-items:center; justify-content:center; margin:0 auto 0.5rem; }
+  
+  /* Counter removed per request */
+  
+  /* Points Grid */
+  .points-grid .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1rem; padding:1rem 0; }
+  .point-card { background:var(--branco); border-radius:var(--raio); overflow:hidden; box-shadow:var(--sombra);
+                 text-decoration:none; color:inherit; opacity:0; transform:translateY(20px);
+                 animation:fadeInUp 0.6s forwards; }
+  .point-card:nth-child(1){animation-delay:0.3s;} .point-card:nth-child(2){animation-delay:0.5s;}
+  .point-card:nth-child(3){animation-delay:0.7s;} .point-card:nth-child(4){animation-delay:0.9s;}
+  .point-card:nth-child(5){animation-delay:1.1s;}
+  .card-image img { width:100%; height:160px; object-fit:cover; transition:transform var(--trans); }
+  .point-card:hover .card-image img{transform:scale(1.05);}
+  .card-info { padding:1rem; }
+  .card-info h3 { color:var(--verde-1); margin-bottom:0.5rem; }
+  .card-info p { margin:0.3rem 0; }
+  
+  /* Global */
+  .page-title { background:var(--verde-1); color:#fff; padding:2rem 0; text-align:center; }
+  .page-title p { color:var(--verde-5); }
+  footer { background:var(--verde-2); color:#fff; padding:1rem 0; }
+  footer a { color:#fff; text-decoration:none; }
+  footer .footer-content { display:flex; justify-content:space-between; flex-wrap:wrap; }
+  
+  /* Animations */
+  @keyframes fadeInUp{0%{opacity:0;transform:translateY(30px);}100%{opacity:1;transform:translateY(0);}}
+  
+  /* Responsive */
+  @media(max-width:768px){ .steps-container, .points-grid .grid { grid-template-columns:1fr!important; flex-direction:column; } }
+  .auth-tabcontent input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .auth-tabcontent button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .auth-tabcontent button:hover {
+    background-color: #45a049;
+  }
+  
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #4caf50;
+    left: 20%;
+   
+  }
+
+  /* ===== Ecopontos (Pontos de Coleta) ===== */
+#pontos-de-coleta {
+    padding: 3rem 0;
+    background-color: #45a049;
+  }
+  #pontos-de-coleta h2 {
+    text-align: center;
+    color: var(--verde-1);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    animation: fadeInUp 0.8s ease both;
+  }
+  
+  .ecoponto {
+    background: var(--branco-fosco);
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra-ativa);
+    padding: 1.5rem;
+    margin: 1rem auto;
+    max-width: 800px;
+    transition: var(--transicao-suave);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s forwards;
+  }
+  .ecoponto:nth-of-type(1) { animation-delay: 0.2s; }
+  .ecoponto:nth-of-type(2) { animation-delay: 0.4s; }
+  .ecoponto:nth-of-type(3) { animation-delay: 0.6s; }
+  .ecoponto:nth-of-type(4) { animation-delay: 0.8s; }
+  .ecoponto:nth-of-type(5) { animation-delay: 1.0s; }
+  .ecoponto:nth-of-type(6) { animation-delay: 1.2s; }
+  .ecoponto:nth-of-type(7) { animation-delay: 1.4s; }
+  .ecoponto:nth-of-type(8) { animation-delay: 1.6s; }
+  .ecoponto:nth-of-type(9) { animation-delay: 1.8s; }
+  .ecoponto:nth-of-type(10){ animation-delay: 2.0s; }
+  
+  .ecoponto h3 {
+    color: var(--verde-2);
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+  }
+  .ecoponto p {
+    margin: 0.4rem 0;
+    line-height: 1.5;
+  }
+  .ecoponto a {
+    color: var(--verde-3);
+    text-decoration: none;
+  }
+  .ecoponto a:hover {
+    text-decoration: underline;
+  }
+  
+  .ecoponto .btn {
+    display: inline-block;
+    margin: 0.5rem 0.5rem 0 0;
+    padding: 0.5rem 1rem;
+    border-radius: var(--raio-borda);
+    font-size: 0.9rem;
+    transition: var(--transicao-suave);
+  }
+  .ecoponto .btn-map {
+    background: var(--verde-4);
+    color: white;
+  }
+  .ecoponto .btn-map:hover {
+    background: var(--verde-3);
+  }
+  .ecoponto .btn-details {
+    background: var(--verde-2);
+    color: white;
+  }
+  .ecoponto .btn-details:hover {
+    background: var(--verde-1);
+  }
+  
+  /* Wrapper to center */
+  #pontos-de-coleta .ecoponto {
+    width: 90%;
+    max-width: 700px;
+  }
+  
+  /* Fade-in keyframe (if not already present) */
+  @keyframes fadeInUp {
+    0%   { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Responsive tweak */
+  @media (max-width: 600px) {
+    #pontos-de-coleta {
+      padding: 2rem 0;
+    }
+    .ecoponto {
+      width: 95%;
+      padding: 1rem;
+    }
+  }
+  /* Grid container for ecopontos */
+#pontos-de-coleta .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(26vw, 1vw));
+    gap: 2rem;
+    align-items: stretch;
+    justify-items: center;
+    padding-top: 2rem;
+   margin-left: 10%;
+
+  }
+  p{
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+  }
+  .benefits {
+    background: var(--branco-fosco);
+    padding: 3rem 0;
+  }
+  .benefits h2 {
+    text-align: center;
+    color: var(--verde-1);
+    margin-bottom: 1.5rem;
+  }
+  .benefit-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 1.5rem;
+    padding: 0;
+  }
+  .benefit-list li {
+   
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra-ativa);
+    padding: 1rem;
+    position: relative;
+    transition: var(--transicao-suave);
+  }
+  .benefit-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+  .benefit-list i {
+    color: var(--verde-3);
+    font-size: 1.4rem;
+    margin-right: 0.5rem;
+  }
+  .benefit-list p {
+    display: inline;
+  }
+  .saiba-mais {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    background: var(--verde-4);
+    color: white;
+    border-radius: var(--raio-borda);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: background 0.3s;
+  }
+  .saiba-mais:hover {
+    background: var(--verde-2);
+  }
+  h2{
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    align-content: center;
+    justify-content: center;
+    display:flex;
+  }
+  .intro .container {
+    display: flex;               /* ativa flexbox */
+    flex-direction: column;      /* empilha verticalmente */
+    align-items: center;         /* centra horizontalmente */
+  }
+  .hero {
+    position: relative;
+    color: #fff;
+    text-align: center;
+    padding: 100px 21px;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero-content h1 {
+    margin-bottom: 1px;
+    font-size: 2.5rem;
+  }
+  
+  .hero-content p {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
