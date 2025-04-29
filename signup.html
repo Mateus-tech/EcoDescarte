@@ -1,35 +1,196 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cadastro - EcoTroca</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="icon" type="image/png" href="logo2.png">
+  <link rel="stylesheet" href="css/style.css">
+
   <style>
-    body { font-family: Arial, sans-serif; background: #f1f1f1; display: flex; justify-content: center; align-items: center; height: 100vh; }
-    .container { background: #fff; padding: 20px; border-radius: 8px; max-width: 400px; width: 100%; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    h1 { text-align: center; }
-    input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; }
-    button { width: 100%; padding: 10px; border: none; border-radius: 4px; background: #4CAF50; color: #fff; font-size: 16px; cursor: pointer; }
-    button:hover { background: #45a049; }
-    .message { color: red; text-align: center; margin-top: 10px; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e8f5e9, #f1f8e9);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+   
+
+    .auth-buttons a {
+      background-color: white;
+      color: #4CAF50;
+      padding: 6px 12px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .auth-buttons a:hover {
+      background-color: #e8f5e9;
+    }
+
+    .signup-container {
+      max-width: 450px;
+      margin: 100px auto 60px auto;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 35px 25px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .signup-container h1 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 25px;
+    }
+
+    .signup-container input {
+      width: 100%;
+      padding: 12px;
+      font-size: 15px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .signup-container button {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .signup-container button:hover {
+      background-color: #45a049;
+    }
+
+    .message {
+      color: red;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .signup-container p {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .signup-container a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+
+    .signup-container a:hover {
+      text-decoration: underline;
+    }
+
+   
+
+    @media (max-width: 600px) {
+      .signup-container {
+        margin: 80px 20px;
+        padding: 30px 20px;
+      }
+
+      .header-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .search-bar {
+        width: 100%;
+        margin: 10px 0;
+      }
+
+      .user-nav {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="container">
+
+  <!-- Navbar/Header -->
+  <header class="header">
+    <div class="container header-top">
+      <a href="index.html" class="logo">
+        <img src="logo2.png" alt="Logo EcoTroca" />
+        <span>Eco+Descarte</span>
+      </a>
+      <div class="search-bar">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" placeholder="Buscar itens, categorias...">
+      </div>
+      <nav class="user-nav" id="userNav">
+        <a href="#" class="nav-link"><i class="far fa-heart"></i><span>Favoritos</span></a>
+        <a href="#" class="nav-link"><i class="far fa-comment-dots"></i><span>Mensagens</span></a>
+        <div class="auth-buttons" id="authArea">
+          <a href="login.html" class="btn btn-login">Entrar</a>
+          <a href="signup.html" class="btn btn-signup">Cadastrar</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Container de Cadastro -->
+  <div class="signup-container">
     <h1>Cadastro</h1>
-    <input type="text" id="signupName" placeholder="Nome completo">
-    <input type="email" id="signupEmail" placeholder="Digite seu e-mail">
-    <input type="password" id="signupPassword" placeholder="Digite sua senha">
-    <input type="tel" id="signupPhone" placeholder="Telefone (opcional)">
+    <input type="text" id="signupName" placeholder="Nome completo" />
+    <input type="email" id="signupEmail" placeholder="Digite seu e-mail" />
+    <input type="password" id="signupPassword" placeholder="Digite sua senha" />
+    <input type="tel" id="signupPhone" placeholder="Telefone (opcional)" />
     <button id="signupBtn">Criar Conta</button>
     <div class="message" id="signupMessage"></div>
-    <p style="text-align:center; margin-top:15px;">
-      Já tem conta? <a href="login.html">Entrar</a>
-    </p>
+    <p>Já tem conta? <a href="login.html">Entrar</a></p>
   </div>
 
-  <!-- Firebase SDK -->
+ 
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-section">
+        <a href="index.html" class="logo"><i class="fas fa-recycle logo-icon"></i><span>EcoTroca</span></a>
+        <p>Conectando pessoas para um consumo mais consciente.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Navegação</h3>
+        <a href="index.html">Início</a>
+        <a href="index.html?transactionType=sale">Comprar</a>
+        <a href="create-listing.html">Vender</a>
+        <a href="index.html?transactionType=trade">Trocar</a>
+        <a href="index.html?transactionType=donation">Doar</a>
+        <a href="recycling-centers.html">Descarte</a>
+      </div>
+      <div class="footer-section">
+        <h3>Ajuda</h3>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#">FAQ</a>
+        <a href="#">Segurança</a>
+        <a href="#">Contato</a>
+      </div>
+      <div class="footer-section newsletter">
+        <h3>Newsletter</h3>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Seu e-mail">
+          <button type="submit"><i class="fas fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 EcoTroca. Todos os direitos reservados.</span>
+    </div>
+  </footer>
+
+  <!-- Firebase -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
     import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
@@ -58,18 +219,16 @@
 
       try {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-        // Armazena dados adicionais no Firestore
         await setDoc(doc(db, "users", userCredential.user.uid), {
           nome: name,
           email: email,
           telefone: phone,
           criadoEm: new Date()
         });
-        // Após cadastro bem-sucedido, redireciona para a página de login ou para a área restrita
         window.location.href = "login.html";
       } catch (error) {
         let errorMessage = "";
-        switch(error.code) {
+        switch (error.code) {
           case 'auth/email-already-in-use':
             errorMessage = 'E-mail já cadastrado';
             break;
@@ -86,11 +245,10 @@
       }
     });
 
-    // Se já estiver logado, redireciona para a página principal
     onAuthStateChanged(auth, (user) => {
       if (user) {
         window.location.href = "index.html?success=1";
-    }
+      }
     });
   </script>
 </body>
